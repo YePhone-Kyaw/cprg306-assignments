@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function NewItem() {
+export default function NewItem( {onAddItem} ) {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState("produce");
@@ -10,16 +10,19 @@ export default function NewItem() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    let item = {
+    let newItem = {
       name,
       quantity,
       category,
     };
 
-    console.log(item);
+    console.log(newItem);
     alert(
-      `Item: ${item.name} \nQuantity: ${item.quantity} \nCategory: ${item.category}`
+      `Item: ${newItem.name} \nQuantity: ${newItem.quantity} \nCategory: ${newItem.category}`
     );
+
+
+    onAddItem(newItem)
 
     setName("");
     setQuantity(1);
@@ -31,7 +34,7 @@ export default function NewItem() {
   const handleSetCategory = (event) => setCategory(event.target.value);
 
   return (
-    <form className="flex flex-col space-y-5 p-5 m-4 bg-gray-800/60 rounded-lg max-w-md text-black">
+    <form className="flex flex-col space-y-5 p-5 m-4 bg-gray-800/60 rounded-lg max-w-lg text-black">
       <div className="">
         <input className="rounded-lg w-full p-2 border-2 border-green-500/75"
           type="text"
