@@ -32,7 +32,7 @@ export default function ItemList( {items, onItemSelect} ) {
     }, {} );
 
     return (
-        <div className="">
+        <div>
             <div className="flex justify-between m-4 p-5 bg-gray-800/60 rounded-lg max-w-lg">
             <p className="text-xl">Sort By:</p>
             <button onClick={ () => setSortBy('name') } className={`p-1 rounded-lg ${sortBy === 'name' ? 'bg-green-500/75' : 'bg-green-700/75'}`} >Name</button>

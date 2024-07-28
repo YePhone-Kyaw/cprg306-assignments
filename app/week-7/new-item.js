@@ -44,7 +44,7 @@ export default function NewItem( {onAddItem} ) {
           required
         />
       </div>
-      <div className="flex justify-between" >
+      <div className="flex space-x-5" >
         <input className="rounded-lg p-2 border-2 border-green-500/75"
           min={1}
           max={99}
